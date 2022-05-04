@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-    @Input() items: any = [];
+    @Input() currencies: any = [];
 }
