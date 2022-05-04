@@ -1,7 +1,7 @@
-<div *ngIf="currencies[0]">
-    <p>{{ currencies[0].base_ccy }}</p>
-    <p>{{ currencies[0].buy }}</p>
-    <p>{{ currencies[0].ccy }}</p>
-    <p>{{ currencies[0].sale }}</p>
-    <!-- <button type="button" (click)="addToCart(product)">Buy</button> -->
-</div>
+<ul class="currencies">
+    <li *ngFor="let currency of currencies">
+        <p class="buy">{{ currency.ccy }}</p>
+        <p class="buy">{{ currency.buy }}</p>
+        <p class="sale">{{ currency.sale }}</p>
+    </li>
+</ul>

@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
     constructor(private currencyService: CurrencyService) {}
 
     ngOnInit(): void {
-        this.currencyService
-            .getCurrencies()
-            .subscribe((data) => (this.currencies = data));
+        this.currencyService.getCurrencies().subscribe((data) => {
+            this.currencies = data.filter((c) => c.base_ccy === 'UAH');
+        });
     }
 }
