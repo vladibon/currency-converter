@@ -1,1 +1,7 @@
-<p>{{ currencies[0]?.ccy }}</p>
+<div *ngIf="currencies[0]">
+    <p>{{ currencies[0].base_ccy }}</p>
+    <p>{{ currencies[0].buy }}</p>
+    <p>{{ currencies[0].ccy }}</p>
+    <p>{{ currencies[0].sale }}</p>
+    <!-- <button type="button" (click)="addToCart(product)">Buy</button> -->
+</div>
