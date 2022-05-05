@@ -1,21 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from './currency.service';
-import { Currency } from './currency.interface';
+import { CurrencyService } from './services/currency.service';
+import { Currency } from './services/currency.interface';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
     title = 'currency-converter';
+    nationalCurrency = 'UAH';
     currencies: Currency[] = [];
+    options: any = [];
 
     constructor(private currencyService: CurrencyService) {}
 
     ngOnInit(): void {
         this.currencyService.getCurrencies().subscribe((data) => {
-            this.currencies = data.filter((c) => c.base_ccy === 'UAH');
+            this.currencies = data
+                .filter((c) => c.base_ccy === this.nationalCurrency)
+                .map((c) => {
+                    c.buy = Number(c.buy).toFixed(2);
+                    c.sale = Number(c.sale).toFixed(2);
+                    return c;
+                });
+
+            this.options = [
+                this.nationalCurrency,
+                ...this.currencies.map((c) => c.ccy),
+            ];
         });
     }
 }

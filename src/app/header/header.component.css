@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #fff;
+    background-color: tomato;
+    color: #fff;
+}
+
+#ccy,
+#buy,
+#sale {
+    margin-right: 12px;
+    margin-left: 12px;
+}

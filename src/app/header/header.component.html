@@ -1,7 +1,11 @@
-<ul class="currencies">
-    <li *ngFor="let currency of currencies">
-        <p class="buy">{{ currency.ccy }}</p>
-        <p class="buy">{{ currency.buy }}</p>
-        <p class="sale">{{ currency.sale }}</p>
-    </li>
-</ul>
+<header class="header">
+    <ul class="currencies">
+        <li *ngFor="let currency of currencies">
+            <p id="ccy">{{ currency.ccy }}</p>
+
+            <p id="buy">{{ currency.buy }}</p>
+            /
+            <p id="sale">{{ currency.sale }}</p>
+        </li>
+    </ul>
+</header>

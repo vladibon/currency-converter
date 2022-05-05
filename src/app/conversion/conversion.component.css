@@ -1,0 +1,15 @@
+.currencyWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.currency:not(:last-child) {
+    margin-right: 20px;
+}
+
+.field {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+}

@@ -1,11 +1,57 @@
-<h2>Conversion</h2>
+<main>
+    <h1>Currency Converter</h1>
 
-<input type="text" />
+    <div class="currencyWrapper">
+        <!-- Sale -->
+        <div class="currency">
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Sale</mat-label>
+                <mat-select
+                    id="saleSelect"
+                    value="{{ saleSelectValue }}"
+                    (selectionChange)="onSelectionChange($event)"
+                >
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-<!-- <ul class="currencies">
-    <li *ngFor="let currency of currencies">
-        <p class="buy">{{ currency.ccy }}</p>
-        <p class="buy">{{ currency.buy }}</p>
-        <p class="sale">{{ currency.sale }}</p>
-    </li>
-</ul> -->
+            <mat-form-field class="field" appearance="fill">
+                <input
+                    matInput
+                    name="saleInput"
+                    placeholder="0.00"
+                    value="{{ saleInputValue }}"
+                    (keyup)="onKeyUp($event)"
+                />
+            </mat-form-field>
+        </div>
+
+        <!-- Buy -->
+        <div class="currency">
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Buy</mat-label>
+                <mat-select
+                    id="buySelect"
+                    value="{{ buySelectValue }}"
+                    (selectionChange)="onSelectionChange($event)"
+                >
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="field" appearance="fill">
+                <input
+                    matInput
+                    name="buyInput"
+                    placeholder="0.00"
+                    value="{{ buyInputValue }}"
+                    (keyup)="onKeyUp($event)"
+                />
+            </mat-form-field>
+        </div>
+    </div>
+</main>
