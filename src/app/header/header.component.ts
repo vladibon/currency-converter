@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Currency } from '../services/currency.interface';
 
 @Component({
     selector: 'app-header',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-    @Input() currencies: any = [];
+    @Input() currencies: Currency[] = [];
 }

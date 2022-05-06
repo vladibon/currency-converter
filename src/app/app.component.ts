@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
     title = 'currency-converter';
     nationalCurrency = 'UAH';
     currencies: Currency[] = [];
-    options: any = [];
+    options: string[] = [];
 
     constructor(private currencyService: CurrencyService) {}
 

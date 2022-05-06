@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Currency } from '../services/currency.interface';
 
 @Component({
     selector: 'app-conversion',
@@ -6,13 +7,13 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./conversion.component.css'],
 })
 export class ConversionComponent {
-    @Input() currencies: any = [];
-    @Input() options: any = [];
+    @Input() currencies: Currency[] = [];
+    @Input() options: string[] = [];
 
     saleSelectValue: string = '';
     buySelectValue: string = '';
-    saleInputValue: any;
-    buyInputValue: any;
+    saleInputValue: number = 0;
+    buyInputValue: number = 0;
     rate: number = 1;
 
     ngOnChanges(): void {
@@ -89,8 +90,8 @@ export class ConversionComponent {
     }
 
     clearInputs() {
-        this.saleInputValue = '';
-        this.buyInputValue = '';
+        this.saleInputValue = 0;
+        this.buyInputValue = 0;
     }
 
     divide(value: number) {
