@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Currency } from '../services/currency.interface';
+import { ICurrency } from '../services/currency.interface';
 
 @Component({
     selector: 'app-conversion',
@@ -7,7 +7,7 @@ import { Currency } from '../services/currency.interface';
     styleUrls: ['./conversion.component.css'],
 })
 export class ConversionComponent {
-    @Input() currencies: Currency[] = [];
+    @Input() currencies: ICurrency[] = [];
     @Input() options: string[] = [];
 
     saleSelectValue: string = '';

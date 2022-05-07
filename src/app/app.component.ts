@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrencyService } from './services/currency.service';
-import { Currency } from './services/currency.interface';
+import { ICurrency } from './services/currency.interface';
 
 @Component({
     selector: 'app-root',
@@ -9,7 +9,7 @@ import { Currency } from './services/currency.interface';
 export class AppComponent implements OnInit {
     title = 'currency-converter';
     nationalCurrency = 'UAH';
-    currencies: Currency[] = [];
+    currencies: ICurrency[] = [];
     options: string[] = [];
 
     constructor(private currencyService: CurrencyService) {}
