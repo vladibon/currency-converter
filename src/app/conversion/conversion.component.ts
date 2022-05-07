@@ -35,7 +35,7 @@ export class ConversionComponent {
 
         if (this.saleSelectValue === this.buySelectValue) this.rate = 1;
 
-        this.currencies.forEach((c: any) => {
+        this.currencies.forEach((c) => {
             if (
                 this.saleSelectValue !== c.base_ccy &&
                 this.buySelectValue !== c.base_ccy &&
@@ -61,7 +61,7 @@ export class ConversionComponent {
                 this.saleSelectValue === c.ccy &&
                 this.buySelectValue === c.base_ccy
             ) {
-                this.rate = 1 / c.buy;
+                this.rate = 1 / Number(c.buy);
             }
         });
     }
