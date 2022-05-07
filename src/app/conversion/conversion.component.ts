@@ -10,11 +10,11 @@ export class ConversionComponent {
     @Input() currencies: ICurrency[] = [];
     @Input() options: string[] = [];
 
-    saleSelectValue: string = '';
-    buySelectValue: string = '';
-    saleInputValue: number = 0;
-    buyInputValue: number = 0;
-    rate: number = 1;
+    saleSelectValue = '';
+    buySelectValue = '';
+    saleInputValue = 0;
+    buyInputValue = 0;
+    rate = 1;
 
     ngOnChanges(): void {
         this.saleSelectValue = this.currencies[0]?.base_ccy;
